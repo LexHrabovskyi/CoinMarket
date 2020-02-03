@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,8 @@
 		D7F357C123E82A2500DCADC5 /* FirstListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */; };
 		D7F357C223E82A2500DCADC5 /* SecondListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BD23E8260500DCADC5 /* SecondListTestData.json */; };
 		D7F357C423E8403200DCADC5 /* ActivityIndicatorRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */; };
+		D7F357C723E845F700DCADC5 /* FavoriteCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C623E845F700DCADC5 /* FavoriteCoin.swift */; };
+		D7F357C923E8466A00DCADC5 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C823E8466A00DCADC5 /* FavoriteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D7F357BD23E8260500DCADC5 /* SecondListTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SecondListTestData.json; sourceTree = "<group>"; };
 		D7F357BF23E8261700DCADC5 /* LoadTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTestData.swift; sourceTree = "<group>"; };
 		D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRepresent.swift; sourceTree = "<group>"; };
+		D7F357C623E845F700DCADC5 /* FavoriteCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoin.swift; sourceTree = "<group>"; };
+		D7F357C823E8466A00DCADC5 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		E1BBF7927368D99384D0DDE4 /* Pods_CoinMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,7 +111,6 @@
 				3500FC1C4D0DB02F9155C22F /* Pods-CoinMarket.debug.xcconfig */,
 				59E68BA2D20D54925C0EF547 /* Pods-CoinMarket.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -179,6 +182,7 @@
 		D744CFA623E7DF7500C20084 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D7F357C523E845DE00DCADC5 /* Realm storage */,
 				D744CFA923E7E2E300C20084 /* Coin.swift */,
 				D744CFAB23E7E3A700C20084 /* MarketService.swift */,
 			);
@@ -238,6 +242,15 @@
 				D7F357BD23E8260500DCADC5 /* SecondListTestData.json */,
 			);
 			path = TestData;
+			sourceTree = "<group>";
+		};
+		D7F357C523E845DE00DCADC5 /* Realm storage */ = {
+			isa = PBXGroup;
+			children = (
+				D7F357C823E8466A00DCADC5 /* FavoriteService.swift */,
+				D7F357C623E845F700DCADC5 /* FavoriteCoin.swift */,
+			);
+			path = "Realm storage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,10 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D744CFAF23E7E5F600C20084 /* CoinData.swift in Sources */,
+				D7F357C923E8466A00DCADC5 /* FavoriteService.swift in Sources */,
 				D7A852BD23E7F37200CA758D /* URLSessionExtention.swift in Sources */,
 				D7F357C423E8403200DCADC5 /* ActivityIndicatorRepresent.swift in Sources */,
 				D7A852B623E7EC4000CA758D /* CoinListRowView.swift in Sources */,
 				D7A852B923E7F20300CA758D /* NetworkManager.swift in Sources */,
+				D7F357C723E845F700DCADC5 /* FavoriteCoin.swift in Sources */,
 				D7A852BB23E7F33400CA758D /* APIError.swift in Sources */,
 				D744CF8423E7DD9000C20084 /* AppDelegate.swift in Sources */,
 				D744CF8623E7DD9000C20084 /* SceneDelegate.swift in Sources */,
