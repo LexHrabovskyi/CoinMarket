@@ -17,19 +17,17 @@ struct CoinListView: View {
             List {
                 ForEach(marketService.coinList) { coin in
                     NavigationLink(destination: CoinDetailView(with: coin)) {
-                        Text(coin.name)
+                        CoinListRowView(coin: coin)
                     }
                 }
             }
             .navigationBarTitle("Coin market")
-            .navigationBarItems(trailing: Button(action: {
-                self.marketService.updateList()
-            }) {
-                Image(systemName: "arrow.clockwise")
-            })
+            .navigationBarItems(trailing: NavTrailingUpdateButton())
         }
         
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

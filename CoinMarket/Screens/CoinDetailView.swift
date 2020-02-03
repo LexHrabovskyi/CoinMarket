@@ -31,11 +31,7 @@ struct CoinDetailView: View {
             Text("BTC price is: \(coin.priceBtc)")
             
         }
-        .navigationBarItems(trailing: Button(action: {
-            self.marketService.updateList()
-        }) {
-            Image(systemName: "arrow.clockwise")
-        })
+        .navigationBarItems(trailing: NavTrailingUpdateButton())
         
     }
 }
