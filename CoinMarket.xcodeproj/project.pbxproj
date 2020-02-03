@@ -81,7 +81,9 @@
 			children = (
 				D744CF8323E7DD9000C20084 /* AppDelegate.swift */,
 				D744CF8523E7DD9000C20084 /* SceneDelegate.swift */,
-				D744CF8723E7DD9000C20084 /* ContentView.swift */,
+				D744CFA623E7DF7500C20084 /* Models */,
+				D744CFA523E7DF0500C20084 /* Networking */,
+				D744CFA723E7DF8100C20084 /* Screens */,
 				D744CF8923E7DD9300C20084 /* Assets.xcassets */,
 				D744CF8E23E7DD9300C20084 /* LaunchScreen.storyboard */,
 				D744CF9123E7DD9300C20084 /* Info.plist */,
@@ -105,6 +107,28 @@
 				D744CF9C23E7DD9400C20084 /* Info.plist */,
 			);
 			path = CoinMarketTests;
+			sourceTree = "<group>";
+		};
+		D744CFA523E7DF0500C20084 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D744CFA623E7DF7500C20084 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D744CFA723E7DF8100C20084 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D744CF8723E7DD9000C20084 /* ContentView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
