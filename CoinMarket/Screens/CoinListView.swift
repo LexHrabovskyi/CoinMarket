@@ -16,7 +16,9 @@ struct CoinListView: View {
         NavigationView {
             List {
                 ForEach(marketService.coinList) { coin in
-                    Text(coin.name)
+                    NavigationLink(destination: CoinDetailView(with: coin)) {
+                        Text(coin.name)
+                    }
                 }
             }
             .navigationBarTitle("Coin market")
