@@ -12,6 +12,14 @@ final class MarketService: ObservableObject {
     
     @Published var coinList: [Coin] = []
     var errorLoadMessage = PassthroughSubject<String, Never>()
+    private var timer = Timer.publish(every: 60, on: .main, in: .default).autoconnect()
+    private var oneMinuteUpdater: AnyCancellable? = nil
+    
+    init() {
+        oneMinuteUpdater = timer.sink { _ in
+            self.updateList()
+        }
+    }
     
     func updateList() {
         
