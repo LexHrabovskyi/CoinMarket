@@ -20,6 +20,10 @@
 		D7A852B123E7E98400CA758D /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852B023E7E98400CA758D /* CoinDetailView.swift */; };
 		D7A852B423E7EBB200CA758D /* NavTrailingUpdateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852B323E7EBB200CA758D /* NavTrailingUpdateButton.swift */; };
 		D7A852B623E7EC4000CA758D /* CoinListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852B523E7EC4000CA758D /* CoinListRowView.swift */; };
+		D7A852B923E7F20300CA758D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852B823E7F20300CA758D /* NetworkManager.swift */; };
+		D7A852BB23E7F33400CA758D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852BA23E7F33400CA758D /* APIError.swift */; };
+		D7A852BD23E7F37200CA758D /* URLSessionExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852BC23E7F37200CA758D /* URLSessionExtention.swift */; };
+		D7A852BF23E7F3B300CA758D /* EndpointsCoinMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852BE23E7F3B300CA758D /* EndpointsCoinMarket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		D7A852B023E7E98400CA758D /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		D7A852B323E7EBB200CA758D /* NavTrailingUpdateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTrailingUpdateButton.swift; sourceTree = "<group>"; };
 		D7A852B523E7EC4000CA758D /* CoinListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRowView.swift; sourceTree = "<group>"; };
+		D7A852B823E7F20300CA758D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D7A852BA23E7F33400CA758D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D7A852BC23E7F37200CA758D /* URLSessionExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtention.swift; sourceTree = "<group>"; };
+		D7A852BE23E7F3B300CA758D /* EndpointsCoinMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsCoinMarket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +133,9 @@
 		D744CFA523E7DF0500C20084 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D7A852B823E7F20300CA758D /* NetworkManager.swift */,
 				D744CFAD23E7E5D500C20084 /* Models (network) */,
+				D7A852C023E7F66E00CA758D /* Supporting network classes */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -171,6 +181,16 @@
 				D7A852B523E7EC4000CA758D /* CoinListRowView.swift */,
 			);
 			path = "Coin list";
+			sourceTree = "<group>";
+		};
+		D7A852C023E7F66E00CA758D /* Supporting network classes */ = {
+			isa = PBXGroup;
+			children = (
+				D7A852BA23E7F33400CA758D /* APIError.swift */,
+				D7A852BC23E7F37200CA758D /* URLSessionExtention.swift */,
+				D7A852BE23E7F3B300CA758D /* EndpointsCoinMarket.swift */,
+			);
+			path = "Supporting network classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,11 +295,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D744CFAF23E7E5F600C20084 /* CoinData.swift in Sources */,
+				D7A852BD23E7F37200CA758D /* URLSessionExtention.swift in Sources */,
 				D7A852B623E7EC4000CA758D /* CoinListRowView.swift in Sources */,
+				D7A852B923E7F20300CA758D /* NetworkManager.swift in Sources */,
+				D7A852BB23E7F33400CA758D /* APIError.swift in Sources */,
 				D744CF8423E7DD9000C20084 /* AppDelegate.swift in Sources */,
 				D744CF8623E7DD9000C20084 /* SceneDelegate.swift in Sources */,
 				D744CFAA23E7E2E300C20084 /* Coin.swift in Sources */,
 				D744CF8823E7DD9000C20084 /* CoinListView.swift in Sources */,
+				D7A852BF23E7F3B300CA758D /* EndpointsCoinMarket.swift in Sources */,
 				D744CFAC23E7E3A700C20084 /* MarketService.swift in Sources */,
 				D7A852B423E7EBB200CA758D /* NavTrailingUpdateButton.swift in Sources */,
 				D7A852B123E7E98400CA758D /* CoinDetailView.swift in Sources */,

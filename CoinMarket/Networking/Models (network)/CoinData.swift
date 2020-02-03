@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias CoinListData = [CoinData]
+
 struct CoinData: Codable {
     let id, name, symbol, rank: String
     let priceUsd, priceBtc, the24HVolumeUsd, marketCapUsd: String
