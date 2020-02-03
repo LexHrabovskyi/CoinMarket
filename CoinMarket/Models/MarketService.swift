@@ -33,7 +33,7 @@ final class MarketService: ObservableObject {
         for coinData in newList {
             
             let convertedCoin = convertToCoin(coinData)
-            guard let indexOfCoin = coinList.firstIndex(of: convertedCoin) else {
+            guard let indexOfCoin = coinList.firstIndex(where: { $0.id == convertedCoin.id }) else {
                 newCoins.append(convertedCoin)
                 continue
             }
