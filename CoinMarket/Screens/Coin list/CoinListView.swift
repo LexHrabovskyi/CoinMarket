@@ -21,12 +21,19 @@ struct CoinListView: View {
                     }
                 }
             }
+            .onAppear {
+                self.updateList()
+            }
             .navigationBarTitle("Coin market")
             .navigationBarItems(trailing: NavTrailingUpdateButton())
         }
         
     }
     
+    private func updateList() {
+        guard marketService.coinList.count == 0 else { return }
+        marketService.updateList()
+    }
     
 }
 
