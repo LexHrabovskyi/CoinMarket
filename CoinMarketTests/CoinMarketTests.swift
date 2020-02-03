@@ -11,24 +11,44 @@ import XCTest
 
 class CoinMarketTests: XCTestCase {
 
+    var marketService: MarketService!
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        marketService = MarketService()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testListReloading() {
+        
+        let expectFirstUpdate = expectation(description: "waiting for full updated list")
+        let expectSecondUpdate = expectation(description: "waiting reloading list")
+        var testStep = 0
+        let subscriber = marketService.$coinList.sink { list in
+            guard testStep != 0 else { testStep += 1; return }
+            if testStep == 1 {
+                expectFirstUpdate.fulfill()
+            } else if testStep == 2 {
+                expectSecondUpdate.fulfill()
+            }
+            
+            testStep += 1
+            
         }
+        
+        marketService.reloadList(with: TestData.firstList)
+        wait(for: [expectFirstUpdate], timeout: 1)
+        
+        XCTAssertEqual(marketService.coinList.count, 5)
+        guard marketService.coinList.count > 0 else { return }
+        XCTAssertEqual(marketService.coinList[0].priceUsd, "9999.99")
+        
+        marketService.reloadList(with: TestData.secondTestList)
+        
+        wait(for: [expectSecondUpdate], timeout: 1)
+        XCTAssertEqual(marketService.coinList.count, 5)
+        XCTAssertEqual(marketService.coinList[0].priceUsd, "10000.0")
+        XCTAssertEqual(marketService.coinList[1].priceUsd, "190.0")
+        
     }
 
 }
+

@@ -24,6 +24,11 @@
 		D7A852BB23E7F33400CA758D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852BA23E7F33400CA758D /* APIError.swift */; };
 		D7A852BD23E7F37200CA758D /* URLSessionExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852BC23E7F37200CA758D /* URLSessionExtention.swift */; };
 		D7A852BF23E7F3B300CA758D /* EndpointsCoinMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A852BE23E7F3B300CA758D /* EndpointsCoinMarket.swift */; };
+		D7F357BC23E825DC00DCADC5 /* FirstListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */; };
+		D7F357BE23E8260500DCADC5 /* SecondListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BD23E8260500DCADC5 /* SecondListTestData.json */; };
+		D7F357C023E8261700DCADC5 /* LoadTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357BF23E8261700DCADC5 /* LoadTestData.swift */; };
+		D7F357C123E82A2500DCADC5 /* FirstListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */; };
+		D7F357C223E82A2500DCADC5 /* SecondListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BD23E8260500DCADC5 /* SecondListTestData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,9 @@
 		D7A852BA23E7F33400CA758D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D7A852BC23E7F37200CA758D /* URLSessionExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtention.swift; sourceTree = "<group>"; };
 		D7A852BE23E7F3B300CA758D /* EndpointsCoinMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsCoinMarket.swift; sourceTree = "<group>"; };
+		D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FirstListTestData.json; sourceTree = "<group>"; };
+		D7F357BD23E8260500DCADC5 /* SecondListTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SecondListTestData.json; sourceTree = "<group>"; };
+		D7F357BF23E8261700DCADC5 /* LoadTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				D744CF9A23E7DD9400C20084 /* CoinMarketTests.swift */,
+				D7F357B823E8255900DCADC5 /* TestData */,
 				D744CF9C23E7DD9400C20084 /* Info.plist */,
 			);
 			path = CoinMarketTests;
@@ -191,6 +200,16 @@
 				D7A852BE23E7F3B300CA758D /* EndpointsCoinMarket.swift */,
 			);
 			path = "Supporting network classes";
+			sourceTree = "<group>";
+		};
+		D7F357B823E8255900DCADC5 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				D7F357BF23E8261700DCADC5 /* LoadTestData.swift */,
+				D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */,
+				D7F357BD23E8260500DCADC5 /* SecondListTestData.json */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +293,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F357C223E82A2500DCADC5 /* SecondListTestData.json in Resources */,
+				D7F357C123E82A2500DCADC5 /* FirstListTestData.json in Resources */,
 				D744CF9023E7DD9300C20084 /* LaunchScreen.storyboard in Resources */,
 				D744CF8D23E7DD9300C20084 /* Preview Assets.xcassets in Resources */,
 				D744CF8A23E7DD9300C20084 /* Assets.xcassets in Resources */,
@@ -284,6 +305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F357BC23E825DC00DCADC5 /* FirstListTestData.json in Resources */,
+				D7F357BE23E8260500DCADC5 /* SecondListTestData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D744CF9B23E7DD9400C20084 /* CoinMarketTests.swift in Sources */,
+				D7F357C023E8261700DCADC5 /* LoadTestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

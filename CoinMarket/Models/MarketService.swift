@@ -27,7 +27,7 @@ final class MarketService: ObservableObject {
         
     }
     
-    private func reloadList(with newList: CoinListData) {
+    func reloadList(with newList: CoinListData) {
         
         var newCoins = [Coin]()
         for coinData in newList {
