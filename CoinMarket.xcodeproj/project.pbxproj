@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60E5BC247E7317DD8D71CB3C /* Pods_CoinMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BBF7927368D99384D0DDE4 /* Pods_CoinMarket.framework */; };
 		D744CF8423E7DD9000C20084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744CF8323E7DD9000C20084 /* AppDelegate.swift */; };
 		D744CF8623E7DD9000C20084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744CF8523E7DD9000C20084 /* SceneDelegate.swift */; };
 		D744CF8823E7DD9000C20084 /* CoinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744CF8723E7DD9000C20084 /* CoinListView.swift */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3500FC1C4D0DB02F9155C22F /* Pods-CoinMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMarket.debug.xcconfig"; path = "Target Support Files/Pods-CoinMarket/Pods-CoinMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		59E68BA2D20D54925C0EF547 /* Pods-CoinMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMarket.release.xcconfig"; path = "Target Support Files/Pods-CoinMarket/Pods-CoinMarket.release.xcconfig"; sourceTree = "<group>"; };
 		D744CF8023E7DD9000C20084 /* CoinMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D744CF8323E7DD9000C20084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D744CF8523E7DD9000C20084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		D7F357BD23E8260500DCADC5 /* SecondListTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SecondListTestData.json; sourceTree = "<group>"; };
 		D7F357BF23E8261700DCADC5 /* LoadTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTestData.swift; sourceTree = "<group>"; };
 		D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRepresent.swift; sourceTree = "<group>"; };
+		E1BBF7927368D99384D0DDE4 /* Pods_CoinMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E5BC247E7317DD8D71CB3C /* Pods_CoinMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +93,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58C7F8E556BC894D19C7B451 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1BBF7927368D99384D0DDE4 /* Pods_CoinMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7BB82D09DCC3106623E894B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3500FC1C4D0DB02F9155C22F /* Pods-CoinMarket.debug.xcconfig */,
+				59E68BA2D20D54925C0EF547 /* Pods-CoinMarket.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D744CF7723E7DD9000C20084 = {
 			isa = PBXGroup;
 			children = (
 				D744CF8223E7DD9000C20084 /* CoinMarket */,
 				D744CF9923E7DD9400C20084 /* CoinMarketTests */,
 				D744CF8123E7DD9000C20084 /* Products */,
+				B7BB82D09DCC3106623E894B /* Pods */,
+				58C7F8E556BC894D19C7B451 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D744CF9F23E7DD9400C20084 /* Build configuration list for PBXNativeTarget "CoinMarket" */;
 			buildPhases = (
+				147E76EE2F11643E21E4DF7F /* [CP] Check Pods Manifest.lock */,
 				D744CF7C23E7DD9000C20084 /* Sources */,
 				D744CF7D23E7DD9000C20084 /* Frameworks */,
 				D744CF7E23E7DD9000C20084 /* Resources */,
+				99498DBFF266B146E3771CD2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +341,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		147E76EE2F11643E21E4DF7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99498DBFF266B146E3771CD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinMarket/Pods-CoinMarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinMarket/Pods-CoinMarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinMarket/Pods-CoinMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D744CF7C23E7DD9000C20084 /* Sources */ = {
@@ -484,6 +553,7 @@
 		};
 		D744CFA023E7DD9400C20084 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3500FC1C4D0DB02F9155C22F /* Pods-CoinMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +574,7 @@
 		};
 		D744CFA123E7DD9400C20084 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59E68BA2D20D54925C0EF547 /* Pods-CoinMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
