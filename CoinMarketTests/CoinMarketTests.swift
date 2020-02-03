@@ -26,7 +26,9 @@ class CoinMarketTests: XCTestCase {
             guard testStep != 0 else { testStep += 1; return }
             if testStep == 1 {
                 expectFirstUpdate.fulfill()
-            } else if testStep == 2 {
+            } else if 2...3 ~= testStep {
+                // updated BTC and ETH in list
+            } else if testStep == 4 {
                 expectSecondUpdate.fulfill()
             }
             
@@ -44,7 +46,7 @@ class CoinMarketTests: XCTestCase {
         marketService.reloadList(with: TestData.secondTestList)
         
         wait(for: [expectSecondUpdate], timeout: 1)
-        XCTAssertEqual(marketService.coinList.count, 5)
+        XCTAssertEqual(marketService.coinList.count, 6)
         XCTAssertEqual(marketService.coinList[0].priceUsd, "10000.0")
         XCTAssertEqual(marketService.coinList[1].priceUsd, "190.0")
         
