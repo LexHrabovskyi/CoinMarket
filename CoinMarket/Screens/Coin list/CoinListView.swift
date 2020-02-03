@@ -11,6 +11,8 @@ import SwiftUI
 struct CoinListView: View {
     
     @EnvironmentObject private var marketService: MarketService
+    @State private var showingError = false
+    @State private var errorMessage = ""
     
     var body: some View {
         NavigationView {
@@ -21,11 +23,18 @@ struct CoinListView: View {
                     }
                 }
             }
+            .navigationBarTitle("Coin market")
+            .navigationBarItems(trailing: NavTrailingUpdateButton())
             .onAppear {
                 self.updateList()
             }
-            .navigationBarTitle("Coin market")
-            .navigationBarItems(trailing: NavTrailingUpdateButton())
+            .onReceive(marketService.errorLoadMessage) { message in
+                self.errorMessage = message
+                self.showingError = true
+            }
+            .alert(isPresented: $showingError) {
+                Alert(title: Text("Error"), message: Text(self.errorMessage), dismissButton: .default(Text("OK")))
+            }
         }
         
     }

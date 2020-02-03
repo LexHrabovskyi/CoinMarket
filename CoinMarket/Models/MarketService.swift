@@ -63,11 +63,15 @@ final class MarketService: ObservableObject {
     }
     
     private func handleLoadError(_ error: APIError) {
-        if error == .notConnected {
-            self.errorLoadMessage.send("Not connected to internet!")
-        } else {
-            self.errorLoadMessage.send("Server problem. Please, try later")
+        
+        DispatchQueue.main.async {
+            if error == .notConnected {
+                self.errorLoadMessage.send("Not connected to the internet!")
+            } else {
+                self.errorLoadMessage.send("Server problem. Please, try later")
+            }
         }
+        
     }
     
 }
