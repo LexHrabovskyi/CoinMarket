@@ -16,7 +16,7 @@ final class NetworkManager {
     private let urlSession = URLSession.shared
     private let jsonDecoder: JSONDecoder = {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        jsonDecoder.keyDecodingStrategy = .useDefaultKeys
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-mm-dd"
         jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
