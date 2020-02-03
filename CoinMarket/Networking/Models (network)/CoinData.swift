@@ -12,9 +12,11 @@ typealias CoinListData = [CoinData]
 
 struct CoinData: Codable {
     let id, name, symbol, rank: String
-    let priceUsd, priceBtc, the24HVolumeUsd, marketCapUsd: String
-    let availableSupply, totalSupply, maxSupply, percentChange1H: String
-    let percentChange24H, percentChange7D, lastUpdated: String
+    let priceUsd, priceBtc: String?
+//    let priceUsd, priceBtc, the24HVolumeUsd, marketCapUsd: String
+    let the24HVolumeUsd, marketCapUsd: String?
+    let availableSupply, totalSupply, maxSupply, percentChange1H: String?
+    let percentChange24H, percentChange7D, lastUpdated: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, symbol, rank

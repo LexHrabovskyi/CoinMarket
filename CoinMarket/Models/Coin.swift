@@ -12,8 +12,8 @@ struct Coin: Identifiable {
     let id: String
     let name: String
     let symbol: String
-    let priceUsd: String
-    let priceBtc: String
+    var priceUsd: String
+    var priceBtc: String
 }
 
 extension Coin: Hashable {}
