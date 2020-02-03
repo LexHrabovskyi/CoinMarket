@@ -19,9 +19,25 @@ final class FavoriteService: ObservableObject {
         return Array(favorites)
     }
     
-    static func addToFavorite(coin: Coin) {
+    static func toogleFavorite(for coin: Coin) {
+        
         let realm = try! Realm()
-        guard findFavorite(with: coin.id, in: realm) == nil else { return }
+        if let deletedFavorite = findFavorite(with: coin.id, in: realm) {
+            removeFromFavorite(deletedFavorite, in: realm)
+        } else {
+            addToFavorite(coin: coin, in: realm)
+        }
+        
+    }
+    
+    private static func findFavorite(with id: String, in realm: Realm) -> FavoriteCoin? {
+           
+           let foundObject = realm.objects(FavoriteCoin.self).filter("id = %@", id).first
+           return foundObject
+           
+       }
+    
+    private static func addToFavorite(coin: Coin, in realm: Realm) {
         let newFavorite = FavoriteCoin()
         newFavorite.id = coin.id
         try! realm.write {
@@ -29,21 +45,13 @@ final class FavoriteService: ObservableObject {
         }
     }
     
-    static func removeFromFavorite(coin: Coin) {
+    private static func removeFromFavorite(_ coin: FavoriteCoin, in realm: Realm) {
         
-        let realm = try! Realm()
         guard let deletedFavorite = findFavorite(with: coin.id, in: realm) else { return }
         
         try! realm.write {
             realm.delete(deletedFavorite)
         }
-    }
-    
-    private static func findFavorite(with id: String, in realm: Realm) -> FavoriteCoin? {
-        
-        let foundObject = realm.objects(FavoriteCoin.self).filter("id = %@", id).first
-        return foundObject
-        
     }
     
 }
