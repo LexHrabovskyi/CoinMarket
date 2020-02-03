@@ -45,7 +45,11 @@ final class MarketService: ObservableObject {
         FavoriteService.toogleFavorite(for: coin)
         for index in coinList.indices {
             guard coin.id == coinList[index].id else { continue }
-            coinList[index].isFavorite.toggle()
+            DispatchQueue.main.async {
+                self.coinList[index].isFavorite.toggle()
+            }
+            break
+            
         }
     }
     

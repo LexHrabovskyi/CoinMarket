@@ -33,6 +33,7 @@
 		D7F357C423E8403200DCADC5 /* ActivityIndicatorRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */; };
 		D7F357C723E845F700DCADC5 /* FavoriteCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C623E845F700DCADC5 /* FavoriteCoin.swift */; };
 		D7F357C923E8466A00DCADC5 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C823E8466A00DCADC5 /* FavoriteService.swift */; };
+		D7F357CB23E8558000DCADC5 /* TabHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357CA23E8558000DCADC5 /* TabHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRepresent.swift; sourceTree = "<group>"; };
 		D7F357C623E845F700DCADC5 /* FavoriteCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoin.swift; sourceTree = "<group>"; };
 		D7F357C823E8466A00DCADC5 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		D7F357CA23E8558000DCADC5 /* TabHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomeView.swift; sourceTree = "<group>"; };
 		E1BBF7927368D99384D0DDE4 /* Pods_CoinMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 		D744CFA723E7DF8100C20084 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D7F357CA23E8558000DCADC5 /* TabHomeView.swift */,
 				D7A852B723E7EE1600CA758D /* Coin list */,
 				D7A852B023E7E98400CA758D /* CoinDetailView.swift */,
 			);
@@ -418,6 +421,7 @@
 				D744CFAC23E7E3A700C20084 /* MarketService.swift in Sources */,
 				D7A852B423E7EBB200CA758D /* NavTrailingUpdateButton.swift in Sources */,
 				D7A852B123E7E98400CA758D /* CoinDetailView.swift in Sources */,
+				D7F357CB23E8558000DCADC5 /* TabHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

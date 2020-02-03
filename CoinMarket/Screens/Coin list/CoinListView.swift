@@ -13,17 +13,23 @@ struct CoinListView: View {
     @EnvironmentObject private var marketService: MarketService
     @State private var showingError = false
     @State private var errorMessage = ""
+    let isFavoriteList: Bool
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(marketService.coinList) { coin in
-                    NavigationLink(destination: CoinDetailView(with: coin)) {
+                    if self.isFavoriteList && coin.isFavorite {
                         CoinListRowView(coin: coin)
+                    } else if !self.isFavoriteList {
+                        NavigationLink(destination: CoinDetailView(with: coin)) {
+                            CoinListRowView(coin: coin)
+                        }
                     }
+                    
                 }
             }
-            .navigationBarTitle("Coin market")
+            .navigationBarTitle(isFavoriteList ? "Favorite" : "Coin market")
             .navigationBarItems(trailing: NavTrailingUpdateButton())
             .onAppear {
                 self.updateList()
@@ -48,7 +54,7 @@ struct CoinListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinListView()
+        CoinListView(isFavoriteList: false)
             .environmentObject(MarketService())
     }
 }
