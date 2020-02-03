@@ -29,6 +29,7 @@
 		D7F357C023E8261700DCADC5 /* LoadTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357BF23E8261700DCADC5 /* LoadTestData.swift */; };
 		D7F357C123E82A2500DCADC5 /* FirstListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */; };
 		D7F357C223E82A2500DCADC5 /* SecondListTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F357BD23E8260500DCADC5 /* SecondListTestData.json */; };
+		D7F357C423E8403200DCADC5 /* ActivityIndicatorRepresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D7F357BB23E825DC00DCADC5 /* FirstListTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FirstListTestData.json; sourceTree = "<group>"; };
 		D7F357BD23E8260500DCADC5 /* SecondListTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SecondListTestData.json; sourceTree = "<group>"; };
 		D7F357BF23E8261700DCADC5 /* LoadTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTestData.swift; sourceTree = "<group>"; };
+		D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRepresent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				D7A852B323E7EBB200CA758D /* NavTrailingUpdateButton.swift */,
+				D7F357C323E8403200DCADC5 /* ActivityIndicatorRepresent.swift */,
 			);
 			path = "Supporting views";
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			files = (
 				D744CFAF23E7E5F600C20084 /* CoinData.swift in Sources */,
 				D7A852BD23E7F37200CA758D /* URLSessionExtention.swift in Sources */,
+				D7F357C423E8403200DCADC5 /* ActivityIndicatorRepresent.swift in Sources */,
 				D7A852B623E7EC4000CA758D /* CoinListRowView.swift in Sources */,
 				D7A852B923E7F20300CA758D /* NetworkManager.swift in Sources */,
 				D7A852BB23E7F33400CA758D /* APIError.swift in Sources */,

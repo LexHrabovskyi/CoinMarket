@@ -11,13 +11,29 @@ import SwiftUI
 struct NavTrailingUpdateButton: View {
     
     @EnvironmentObject private var marketService: MarketService
+    @State private var isLoading = false
     
     var body: some View {
-        Button(action: {
-            self.marketService.updateList()
-        }) {
-            Image(systemName: "arrow.clockwise")
+        
+        ZStack {
+            
+            ActivityIndicator(isAnimating: $isLoading)
+            
+            Button(action: {
+                self.marketService.updateList()
+                self.isLoading = true
+            }) {
+                Image(systemName: "arrow.clockwise")
+            }
+            .opacity(isLoading ? 0 : 1)
+            
         }
+        .frame(width: 24, height: 24)
+        .onReceive(marketService.didLoad) {
+            self.isLoading = false
+        }
+        
+        
     }
 }
 

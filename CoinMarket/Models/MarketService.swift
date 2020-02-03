@@ -12,6 +12,7 @@ final class MarketService: ObservableObject {
     
     @Published var coinList: [Coin] = []
     var errorLoadMessage = PassthroughSubject<String, Never>()
+    var didLoad = PassthroughSubject<Void, Never>()
     private var timer = Timer.publish(every: 60, on: .main, in: .default).autoconnect()
     private var oneMinuteUpdater: AnyCancellable? = nil
     
@@ -30,6 +31,10 @@ final class MarketService: ObservableObject {
                 self.reloadList(with: coinList)
             case .failure(let error):
                 self.handleLoadError(error)
+            }
+            
+            DispatchQueue.main.async {
+                self.didLoad.send()
             }
             
         }
