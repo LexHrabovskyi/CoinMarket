@@ -33,13 +33,17 @@ final class MarketService: ObservableObject {
         for coinData in newList {
             
             let convertedCoin = convertToCoin(coinData)
-            guard let coinIndex = coinList.firstIndex(of: convertedCoin) else {
+            guard let indexOfCoin = coinList.firstIndex(of: convertedCoin) else {
                 newCoins.append(convertedCoin)
                 continue
             }
             
-            coinList[coinIndex].priceBtc = convertedCoin.priceBtc
-            coinList[coinIndex].priceUsd = convertedCoin.priceUsd
+            guard coinNeedsToUpdate(lhs: coinList[indexOfCoin], rhs: convertedCoin) else { continue }
+            
+            DispatchQueue.main.async {
+                self.coinList[indexOfCoin].priceBtc = convertedCoin.priceBtc
+                self.coinList[indexOfCoin].priceUsd = convertedCoin.priceUsd
+            }
             
         }
         
@@ -50,8 +54,11 @@ final class MarketService: ObservableObject {
     }
     
     private func convertToCoin(_ coin: CoinData) -> Coin {
-        return Coin(id: coin.id, name: coin.name, symbol: coin.symbol, priceUsd: String(coin.priceUsd ?? ""), priceBtc: String(coin.priceBtc ?? ""))
+        return Coin(id: coin.id, name: coin.name, symbol: coin.symbol, priceUsd: coin.priceUsd, priceBtc: coin.priceBtc)
     }
     
+    private func coinNeedsToUpdate(lhs: Coin, rhs: Coin) -> Bool {
+        return lhs.priceBtc != rhs.priceBtc || lhs.priceUsd != rhs.priceUsd
+    }
     
 }
