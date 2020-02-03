@@ -41,12 +41,23 @@ final class MarketService: ObservableObject {
         
     }
     
+    func toogleFavorite(for coin: Coin) {
+        FavoriteService.toogleFavorite(for: coin)
+        for index in coinList.indices {
+            guard coin.id == coinList[index].id else { continue }
+            coinList[index].isFavorite.toggle()
+        }
+    }
+    
+    // internal for testability
     func reloadList(with newList: CoinListData) {
         
+        let favoriteList = FavoriteService.getFavoriteList()
         var newCoins = [Coin]()
         for coinData in newList {
             
-            let convertedCoin = convertToCoin(coinData)
+            let isFavorite = favoriteList.first(where: { $0.id == coinData.id }) != nil
+            let convertedCoin = convertToCoin(coinData, isFavorite: isFavorite)
             guard let indexOfCoin = coinList.firstIndex(where: { $0.id == convertedCoin.id }) else {
                 newCoins.append(convertedCoin)
                 continue
@@ -67,8 +78,8 @@ final class MarketService: ObservableObject {
         
     }
     
-    private func convertToCoin(_ coin: CoinData) -> Coin {
-        return Coin(id: coin.id, name: coin.name, symbol: coin.symbol, priceUsd: coin.priceUsd, priceBtc: coin.priceBtc)
+    private func convertToCoin(_ coin: CoinData, isFavorite: Bool) -> Coin {
+        return Coin(id: coin.id, name: coin.name, symbol: coin.symbol, priceUsd: coin.priceUsd, priceBtc: coin.priceBtc, isFavorite: isFavorite)
     }
     
     private func coinNeedsToUpdate(lhs: Coin, rhs: Coin) -> Bool {

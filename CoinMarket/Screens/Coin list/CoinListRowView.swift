@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CoinListRowView: View {
     
+    @EnvironmentObject private var marketService: MarketService
     var coin: Coin
     
     var body: some View {
@@ -22,6 +23,11 @@ struct CoinListRowView: View {
             Spacer()
             
             Text(coin.priceUsd)
+            
+            Image(systemName: coin.isFavorite ? "star.fill" : "star")
+                .onTapGesture {
+                    self.marketService.toogleFavorite(for: self.coin)
+            }
             
         }
         .padding()

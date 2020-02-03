@@ -182,9 +182,9 @@
 		D744CFA623E7DF7500C20084 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D744CFAB23E7E3A700C20084 /* MarketService.swift */,
 				D7F357C523E845DE00DCADC5 /* Realm storage */,
 				D744CFA923E7E2E300C20084 /* Coin.swift */,
-				D744CFAB23E7E3A700C20084 /* MarketService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

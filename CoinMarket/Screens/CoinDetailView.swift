@@ -21,9 +21,18 @@ struct CoinDetailView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            Text(coin.symbol)
+            
+            HStack {
+                Text(coin.symbol)
                 .bold()
                 .font(.system(size: 30))
+                
+                Image(systemName: coin.isFavorite ? "star.fill" : "star")
+                    .onTapGesture {
+                        self.marketService.toogleFavorite(for: self.coin)
+                }
+            }
+            
             
             Text(coin.name)
                 .bold()
