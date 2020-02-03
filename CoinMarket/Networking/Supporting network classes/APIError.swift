@@ -9,6 +9,7 @@
 import Foundation
 
 enum APIError: Error {
+    case notConnected
     case invalidResponse
     case invalidEndpoint
     case noData

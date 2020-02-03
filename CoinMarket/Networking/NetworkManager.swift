@@ -23,6 +23,8 @@ final class NetworkManager {
         return jsonDecoder
     }()
     
+    // MARK: public functions
+    
     public func getMarketData(result: @escaping (Result<CoinListData, APIError>) -> Void) {
         
         let listURL = baseURL.appendingPathComponent(EndpointsCoinMarket.ticker.path)
@@ -70,8 +72,13 @@ final class NetworkManager {
             } catch {
                 completion(.failure(.decodeError))
             }
-        case .failure( _):
-            completion(.failure(.apiError))
+        case .failure(let error):
+            if (error as? URLError)?.code == URLError.notConnectedToInternet {
+                completion(.failure(.notConnected))
+            } else {
+                completion(.failure(.apiError))
+            }
+            
         }
         
     }

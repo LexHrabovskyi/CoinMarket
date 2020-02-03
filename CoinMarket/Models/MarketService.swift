@@ -11,6 +11,7 @@ import Combine
 final class MarketService: ObservableObject {
     
     @Published var coinList: [Coin] = []
+    var errorLoadMessage = PassthroughSubject<String, Never>()
     
     func updateList() {
         
@@ -20,7 +21,7 @@ final class MarketService: ObservableObject {
             case .success(let coinList):
                 self.reloadList(with: coinList)
             case .failure(let error):
-                print(error)
+                self.handleLoadError(error)
             }
             
         }
@@ -59,6 +60,14 @@ final class MarketService: ObservableObject {
     
     private func coinNeedsToUpdate(lhs: Coin, rhs: Coin) -> Bool {
         return lhs.priceBtc != rhs.priceBtc || lhs.priceUsd != rhs.priceUsd
+    }
+    
+    private func handleLoadError(_ error: APIError) {
+        if error == .notConnected {
+            self.errorLoadMessage.send("Not connected to internet!")
+        } else {
+            self.errorLoadMessage.send("Server problem. Please, try later")
+        }
     }
     
 }
