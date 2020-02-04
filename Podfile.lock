@@ -1,5 +1,5 @@
 PODS:
-  - CoinMarketService (0.1.1)
+  - CoinMarketService (0.1.2)
   - Realm (4.3.1):
     - Realm/Headers (= 4.3.1)
   - Realm/Headers (4.3.1)
@@ -17,7 +17,7 @@ SPEC REPOS:
     - RealmSwift
 
 SPEC CHECKSUMS:
-  CoinMarketService: 95e7336858d81832186b7eba6612eea5bd2baf28
+  CoinMarketService: 31187beea87e69bc81568f5e76630c14b7607ced
   Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
   RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
 

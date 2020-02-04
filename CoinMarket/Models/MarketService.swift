@@ -7,6 +7,7 @@
 //
 import Foundation
 import Combine
+import CoinMarketService
 
 final class MarketService: ObservableObject {
     
@@ -24,7 +25,7 @@ final class MarketService: ObservableObject {
     
     func updateList() {
         
-        NetworkManager.shared.getMarketData { (result: Result<CoinListData, APIError>) in
+        CoinMarketManager.shared.getMarketData { (result: Result<CoinListData, CoinAPIError>) in
             
             switch result {
             case .success(let coinList):
@@ -90,7 +91,7 @@ final class MarketService: ObservableObject {
         return lhs.priceBtc != rhs.priceBtc || lhs.priceUsd != rhs.priceUsd
     }
     
-    private func handleLoadError(_ error: APIError) {
+    private func handleLoadError(_ error: CoinAPIError) {
         
         DispatchQueue.main.async {
             if error == .notConnected {
