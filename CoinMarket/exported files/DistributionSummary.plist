@@ -35,6 +35,30 @@
 						<string>Apple Development</string>
 					</dict>
 					<key>name</key>
+					<string>CoinMarketService.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>CH744BWJLN</string>
+						<key>name</key>
+						<string>OLEKSANDR HRABOVSKYI</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>432613BC0C7182254E043AAE276E19CD725DF124</string>
+						<key>dateExpires</key>
+						<string>22.09.2020</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
 					<string>Realm.framework</string>
 					<key>team</key>
 					<dict>
