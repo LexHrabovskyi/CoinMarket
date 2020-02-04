@@ -6,5 +6,6 @@ target 'CoinMarket' do
   use_frameworks!
 
   pod 'RealmSwift', :inhibit_warnings => true
+  pod 'CoinMarketService'
 
 end
